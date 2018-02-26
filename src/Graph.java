@@ -6,4 +6,8 @@ import java.util.List;
 public class Graph {
 
     List<Node> noeux;
+
+    public Graph(List<Node> noeux) {
+        this.noeux = noeux;
+    }
 }

@@ -8,4 +8,9 @@ public class Node {
 
     public String nom;
     public List<Edge> connections;
+
+    public Node(String nom, List<Edge> connections) {
+        this.nom = nom;
+        this.connections = connections;
+    }
 }
