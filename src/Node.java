@@ -13,6 +13,10 @@ public class Node {
         this.connections = connections;
     }
 
+    public Node(String nom) {
+        this.nom = nom;
+    }
+
     public String getNom() {
         return nom;
     }
