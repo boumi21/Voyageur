@@ -10,4 +10,12 @@ public class Graph {
     public Graph(List<Node> noeux) {
         this.noeux = noeux;
     }
+
+    public List<Node> getNoeux() {
+        return noeux;
+    }
+
+    public void setNoeux(List<Node> noeux) {
+        this.noeux = noeux;
+    }
 }

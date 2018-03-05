@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +10,22 @@ public class Node {
 
     public Node(String nom, List<Edge> connections) {
         this.nom = nom;
+        this.connections = connections;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public List<Edge> getConnections() {
+        return connections;
+    }
+
+    public void setConnections(List<Edge> connections) {
         this.connections = connections;
     }
 }
