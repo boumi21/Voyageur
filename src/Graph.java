@@ -18,4 +18,31 @@ public class Graph {
     public void setNoeux(List<Node> noeux) {
         this.noeux = noeux;
     }
+
+    public static boolean estConnexe(Graph graph, Node node, boolean[] estMarque){
+        for (int i = 0; i < estMarque.length; i++) {
+            if (node.equals(graph.getNoeux())){
+                estMarque[i] = true;
+            }
+        }
+
+        for (Edge edge : node.getConnections()){
+            for (int i = 0; i < estMarque.length; i++) {
+                if (node.equals(edge.getEnd())){
+                    if (!estMarque[i]){
+                        estConnexe(graph, edge.getEnd(), estMarque);
+                    }
+                }
+            }
+        }
+
+        for (boolean b : estMarque){
+            if (!b) return false;
+
+        }
+
+        return true;
+
+
+    }
 }
