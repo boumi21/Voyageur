@@ -21,15 +21,17 @@ public class Graph {
 
     public static boolean estConnexe(Graph graph, Node node, boolean[] estMarque){
         for (int i = 0; i < estMarque.length; i++) {
-            if (node.equals(graph.getNoeux())){
+            if (node.equals(graph.getNoeux().get(i))){
                 estMarque[i] = true;
             }
         }
 
         for (Edge edge : node.getConnections()){
             for (int i = 0; i < estMarque.length; i++) {
-                if (node.equals(edge.getEnd())){
+                if (edge.getEnd().equals(graph.getNoeux().get(i))){
+                    //System.out.println("je passe la");
                     if (!estMarque[i]){
+                        //System.out.println("je passe ici");
                         estConnexe(graph, edge.getEnd(), estMarque);
                     }
                 }
