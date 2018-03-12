@@ -14,7 +14,6 @@ public class Voyageur {
         Node lille = new Node("Lille");
         Node nantes = new Node("Nantes");
         Node strasbourg = new Node("Strasbourg");
-        Node bart = new Node("Bart");
 
         ArrayList<Edge> listeEdgeParis = new ArrayList<>();
         listeEdgeParis.add(new Edge(paris,nantes,385));
@@ -51,8 +50,6 @@ public class Voyageur {
         listeEdgeStrasbourg.add(new Edge(strasbourg, lille, 525));
         listeEdgeStrasbourg.add(new Edge(strasbourg, lyon, 492));
 
-        ArrayList<Edge> listeEdgeBart = new ArrayList<>();
-
         paris.setConnections(listeEdgeParis);
         lyon.setConnections(listeEdgeLyon);
         marseille.setConnections(listeEdgeMarseille);
@@ -60,7 +57,6 @@ public class Voyageur {
         lille.setConnections(listeEdgeLille);
         nantes.setConnections(listeEdgeNantes);
         strasbourg.setConnections(listeEdgeStrasbourg);
-        bart.setConnections(listeEdgeBart);
 
         ArrayList<Node> listeNoeuds = new ArrayList<>();
 
@@ -71,7 +67,6 @@ public class Voyageur {
         listeNoeuds.add(lille);
         listeNoeuds.add(nantes);
         listeNoeuds.add(strasbourg);
-        listeNoeuds.add(bart);
 
         Graph graph = new Graph(listeNoeuds);
 
