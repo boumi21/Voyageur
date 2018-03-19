@@ -7,13 +7,13 @@ public class Voyageur {
 
     public static void main(String[] args) {
 
-        Node paris = new Node("Paris");
-        Node lyon = new Node("Lyon");
-        Node marseille = new Node("Marseille");
-        Node toulouse = new Node("Toulouse");
-        Node lille = new Node("Lille");
-        Node nantes = new Node("Nantes");
-        Node strasbourg = new Node("Strasbourg");
+        Node paris = new Node(0, "Paris");
+        Node lyon = new Node(1, "Lyon");
+        Node marseille = new Node(2,"Marseille");
+        Node toulouse = new Node(3,"Toulouse");
+        Node lille = new Node(4,"Lille");
+        Node nantes = new Node(5,"Nantes");
+        Node strasbourg = new Node(6,"Strasbourg");
 
         ArrayList<Edge> listeEdgeParis = new ArrayList<>();
         listeEdgeParis.add(new Edge(paris,nantes,385));

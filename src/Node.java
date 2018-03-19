@@ -1,19 +1,19 @@
 import java.util.List;
 
-/**
- * Created by lucas on 26/02/2018.
- */
 public class Node {
 
-    public String nom;
-    public List<Edge> connections;
+    int id;
+    private String nom;
+    private List<Edge> connections;
 
-    public Node(String nom, List<Edge> connections) {
+    public Node(int id, String nom, List<Edge> connections) {
+        this.id = id;
         this.nom = nom;
         this.connections = connections;
     }
 
-    public Node(String nom) {
+    public Node(int id, String nom) {
+        this.id = id;
         this.nom = nom;
     }
 

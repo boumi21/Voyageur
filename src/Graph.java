@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by lucas on 26/02/2018.
- */
 public class Graph {
 
     List<Node> noeux;
@@ -92,6 +89,7 @@ public class Graph {
                         if (distance < distanceMin[i]){
                             distanceMin[i] = distance;
                             predecesseur.add(noeuxCourant);
+
                         }
                     }
                 }
@@ -121,5 +119,19 @@ public class Graph {
             }
         }
         return false;
+    }
+
+    public static void plusCourtCheminSimple(Graph g, Node start, Node end){
+        ArrayList<Node> noeudVisite = new ArrayList<>();
+        ArrayList<Node> cheminCourant = new ArrayList<>();
+
+        Node noeudCourant = start;
+        int distance = 0;
+
+        while (!noeudCourant.equals(end) || noeudVisite.size() < g.getNoeux().size()){
+            for (Node noeud : noeudCourant.getConnections().get) {
+
+            }
+        }
     }
 }
