@@ -72,7 +72,31 @@ public class Voyageur {
 
         boolean[] estMarque = new boolean[graph.getNoeux().size()];
 
-        System.out.println(Graph.estConnexe(graph, graph.getNoeux().get(0), estMarque));
+        //System.out.println(Graph.estConnexe(graph, graph.getNoeux().get(0), estMarque));
+
+        //Graph.plusCourtCheminSimple(graph, marseille, lille);
+
+        int[][] listeDistance = new int[listeNoeuds.size()][listeNoeuds.size()];
+
+        for (int i = 0; i < listeNoeuds.size(); i++) {
+            for (int j = 0; j < listeNoeuds.size(); j++) {
+                listeDistance[i][j] = Graph.plusCourtCheminSimple(graph, listeNoeuds.get(i), listeNoeuds.get(j));
+            }
+        }
+
+        System.out.print("              ");
+        for (Node node : listeNoeuds){
+            System.out.print(node + "    ");
+        }
+        System.out.println();
+        for (int i = 0; i < listeNoeuds.size(); i++) {
+            System.out.print(listeNoeuds.get(i)+"    ");
+            for (int j = 0; j < listeNoeuds.size(); j++) {
+                System.out.print(listeDistance[i][j]+"    ");
+            }
+            System.out.println();
+        }
+
 
 
     }

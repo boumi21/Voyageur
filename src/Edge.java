@@ -3,9 +3,9 @@
  */
 public class Edge {
 
-    public Node start;
-    public Node end;
-    public double valeur;
+    private Node start;
+    private Node end;
+    private double valeur;
 
     public Edge(Node start, Node end, double valeur) {
         this.start = start;

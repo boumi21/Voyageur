@@ -32,4 +32,9 @@ public class Node {
     public void setConnections(List<Edge> connections) {
         this.connections = connections;
     }
+
+    @Override
+    public String toString() {
+        return nom;
+    }
 }
