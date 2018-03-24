@@ -90,9 +90,21 @@ public class Voyageur {
         }
         System.out.println();
         for (int i = 0; i < listeNoeuds.size(); i++) {
-            System.out.print(listeNoeuds.get(i)+"    ");
+            String affichage = ""+listeNoeuds.get(i);
+            System.out.print(affichage);
+
+            for (int espace = 0; espace < 14-affichage.length(); espace++) {
+                System.out.print(" ");
+            }
+
             for (int j = 0; j < listeNoeuds.size(); j++) {
-                System.out.print(listeDistance[i][j]+"    ");
+                affichage = listeDistance[i][j]+"";
+                String chainePourAlligne = listeNoeuds.get(j)+"    ";
+                int taille = chainePourAlligne.length();
+                System.out.print(affichage);
+                for (int espace = 0; espace < taille - affichage.length(); espace++) {
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
