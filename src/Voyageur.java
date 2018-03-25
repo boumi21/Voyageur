@@ -7,6 +7,7 @@ public class Voyageur {
 
     public static void main(String[] args) {
 
+        //Création du graph test
         Node paris = new Node(0, "Paris");
         Node lyon = new Node(1, "Lyon");
         Node marseille = new Node(2,"Marseille");
@@ -70,20 +71,21 @@ public class Voyageur {
 
         Graph graph = new Graph(listeNoeuds);
 
+
         boolean[] estMarque = new boolean[graph.getNoeux().size()];
 
-        //System.out.println(Graph.estConnexe(graph, graph.getNoeux().get(0), estMarque));
-
-        //Graph.plusCourtCheminSimple(graph, marseille, lille);
+        System.out.println(Graph.estConnexe(graph, paris, estMarque)); //Affiche si le graph est connexe ou non
 
         int[][] listeDistance = new int[listeNoeuds.size()][listeNoeuds.size()];
 
+        //Remplissage du tableau des distances entre les villes avec la méthode naïve
         for (int i = 0; i < listeNoeuds.size(); i++) {
             for (int j = 0; j < listeNoeuds.size(); j++) {
                 listeDistance[i][j] = Graph.plusCourtCheminSimple(graph, listeNoeuds.get(i), listeNoeuds.get(j));
             }
         }
 
+        //Affchage des résultats en forme de matrice
         System.out.print("              ");
         for (Node node : listeNoeuds){
             System.out.print(node + "    ");
