@@ -17,6 +17,13 @@ public class Graph {
         this.noeux = noeux;
     }
 
+    /**
+     * Méthode récursive qui permet de savoir si un graph est connexe ou non
+     * @param graph graphe à vérifier
+     * @param node Noeud de départ
+     * @param estMarque Tableau de boolean qui permet de marqué un noeud
+     * @return true si le graphe est connexe, false sinon
+     */
     public static boolean estConnexe(Graph graph, Node node, boolean[] estMarque){
         for (int i = 0; i < estMarque.length; i++) {
             if (node.equals(graph.getNoeux().get(i))){
@@ -42,16 +49,14 @@ public class Graph {
         return true;
     }
 
-
-    private static boolean testPredecesseur(ArrayList<Node> predecesseur, Node noeuxCourant){
-        for (Edge edge : noeuxCourant.getConnections()){
-            if (predecesseur.contains(edge.getEnd())){
-                return true;
-            }
-        }
-        return false;
-    }
-
+    /**
+     * Méthode qui permet de trouver le plus court chemin entre deux noeuds de façon naïve
+     * Le résultat peut être faux dans certains cas, c'est pour ça qu'elle est qualfié de naïve
+     * @param g Le graphe
+     * @param start Le noeud de départ
+     * @param end Le noeud d'arrivé
+     * @return la distance entre les deux noeuds
+     */
     public static int plusCourtCheminSimple(Graph g, Node start, Node end){
         ArrayList<Node> noeudVisite = new ArrayList<>();
         ArrayList<Node> cheminCourant = new ArrayList<>();
@@ -92,6 +97,11 @@ public class Graph {
         return distance;
     }
 
+    /**
+     * Méthode qui permet de ranger une liste de voisin dans l'ordre croissant de leur distance
+     * Elle permet de faciliter la recherche du voisin de plus proche non marqué
+     * @param tab liste des voisins
+     */
     public static void triABulle(List<Edge> tab){
         boolean tab_en_ordre = false;
         int taille = tab.size();

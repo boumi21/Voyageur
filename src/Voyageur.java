@@ -1,8 +1,5 @@
 import java.util.ArrayList;
 
-/**
- * Created by lucas on 26/02/2018.
- */
 public class Voyageur {
 
     public static void main(String[] args) {
